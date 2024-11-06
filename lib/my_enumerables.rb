@@ -24,6 +24,13 @@ module Enumerable
     end
     new_arr.length == self.length ? true : false
   end
+
+  def my_any?
+    new_arr = self.my_select do |elem|
+      yield(elem)
+    end
+    new_arr.length > 0 ? true : false
+  end
 end
 
 # You will first have to define my_each
