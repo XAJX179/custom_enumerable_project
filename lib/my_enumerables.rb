@@ -55,6 +55,14 @@ module Enumerable
       new_arr
     end
   end
+
+  def my_inject(initial_value)
+    accumulator = initial_value
+    self.my_each_with_index do |elem,index|
+      accumulator = yield(accumulator,elem)
+    end
+    accumulator
+  end
 end
 
 # You will first have to define my_each
