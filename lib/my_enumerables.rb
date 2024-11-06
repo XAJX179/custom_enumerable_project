@@ -7,6 +7,16 @@ module Enumerable
     end
     self
   end
+
+  def my_select
+    new_arr = []
+    self.my_each do |elem|
+      if yield(elem)
+        new_arr << elem
+      end
+    end
+    new_arr
+  end
 end
 
 # You will first have to define my_each
