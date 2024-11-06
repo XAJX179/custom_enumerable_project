@@ -45,6 +45,16 @@ module Enumerable
     new_arr = self.my_select { |elem| yield(elem) }
     new_arr.length
   end
+
+  def my_map
+    if block_given?
+      new_arr=[]
+      self.my_each do |elem|
+        new_arr << yield(elem)
+      end
+      new_arr
+    end
+  end
 end
 
 # You will first have to define my_each
