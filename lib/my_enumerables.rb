@@ -38,6 +38,13 @@ module Enumerable
     end
     new_arr.length == 0 ? true : false
   end
+
+  def my_count
+    return self.length unless block_given?
+
+    new_arr = self.my_select { |elem| yield(elem) }
+    new_arr.length
+  end
 end
 
 # You will first have to define my_each
